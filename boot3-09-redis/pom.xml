@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.devil</groupId>
-    <artifactId>boot3-06-features</artifactId>
+    <artifactId>boot3-09-redis</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>boot3-06-features</name>
-    <description>boot3-06-features</description>
+    <name>boot3-09-redis</name>
+    <description>boot3-09-redis</description>
     <url/>
     <licenses>
         <license/>
@@ -32,6 +32,21 @@
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>io.lettuce</groupId>
+                    <artifactId>lettuce-core</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <!--        切换 jedis 作为操作redis的底层客户端-->
+        <dependency>
+            <groupId>redis.clients</groupId>
+            <artifactId>jedis</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
@@ -45,19 +60,7 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot</artifactId>
-        </dependency>
-<!--        导入自定义的starter-->
-        <dependency>
-            <groupId>com.devil</groupId>
-            <artifactId>boot3-08-robot-starter</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-
     </dependencies>
-
 
 
 </project>

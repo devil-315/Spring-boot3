@@ -1,0 +1,3 @@
+org.springframework.boot.SpringApplicationRunListener=com.devil.core.listener.MyAppListener
+
+org.springframework.context.ApplicationListener=com.devil.core.listener.MyListener
