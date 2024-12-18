@@ -4,12 +4,15 @@ import com.devil.features.bean.Cat;
 import com.devil.features.bean.Dog;
 import com.devil.features.bean.Pig;
 import com.devil.features.bean.Sheep;
+import com.devil.starter.robot.RobotAutoConfiguration;
+import com.devil.starter.robot.annotation.EnableRobot;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.Banner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.context.annotation.Import;
 
 /**
  * 1.标识环境
@@ -34,6 +37,8 @@ import org.springframework.context.ConfigurableApplicationContext;
  *
  *          主配置和激活的配置都生效，优先以激活的配置为准
  */
+//@Import(RobotAutoConfiguration.class)
+@EnableRobot
 @Slf4j
 @SpringBootApplication //主程序类
 public class Boot306FeaturesApplication {
